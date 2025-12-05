@@ -1,0 +1,279 @@
+<!-- CredResgate — Landing Page e kit de páginas (estilo: moderno azul + premium escuro com detalhes dourados) -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CredResgate — Recuperação de Créditos Informais</title>
+  <meta name="description" content="CredResgate — recuperação profissional de valores não pagos. Sem custo inicial. Pagamento apenas sobre o valor recuperado." />
+  <style>
+    :root{
+      --bg:#0f1724; /* tom escuro de fundo */
+      --panel:#0b1220; /* painéis escuros */
+      --card:#0f1724;
+      --accent:#0b66ff; /* azul corporativo */
+      --accent-2:#0a4ad6;
+      --gold:#c79a2e; /* dourado discreto */
+      --muted:#98a0b3;
+      --glass: rgba(255,255,255,0.03);
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;color:#e6eef8;background:linear-gradient(180deg,var(--bg),#071027);-webkit-font-smoothing:antialiased}
+
+    /* HEADER */
+    header{position:sticky;top:0;z-index:40;backdrop-filter: blur(6px);background:linear-gradient(90deg, rgba(4,7,12,0.6), rgba(4,8,20,0.45));border-bottom:1px solid rgba(255,255,255,0.03)}
+    .nav{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:18px}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:54px;height:54px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:18px;box-shadow:0 6px 24px rgba(11,102,255,0.18)}
+    .brand .meta{line-height:1}
+    .brand .meta .title{font-size:18px;font-weight:800}
+    .brand .meta .tag{font-size:12px;color:var(--muted)}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+    .nav .actions{display:flex;gap:10px;align-items:center}
+    .btn{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;padding:10px 16px;border-radius:10px;border:none;cursor:pointer;font-weight:700;box-shadow:0 8px 30px rgba(11,102,255,0.12)}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);font-weight:700}
+
+    /* HERO */
+    .hero{max-width:1200px;margin:34px auto;display:grid;grid-template-columns:1fr 420px;gap:28px;padding:0 20px;align-items:center}
+    .panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015));border-radius:var(--radius);padding:28px;box-shadow:0 12px 40px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+    h1{font-size:34px;margin:0 0 12px;color:linear-gradient(90deg,var(--gold),#fff)}
+    .lead{color:var(--muted);max-width:60ch}
+    .kpis{display:flex;gap:12px;margin-top:18px}
+    .kpi{background:var(--glass);padding:10px;border-radius:10px;text-align:center;min-width:110px}
+    .kpi strong{display:block;font-size:18px}
+
+    /* FORM */
+    .card-form input,.card-form textarea{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#e8f0ff;margin-top:8px}
+    .card-form label{font-size:13px;color:var(--muted)}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* SECTIONS */
+    main{max-width:1200px;margin:18px auto;padding:0 20px 60px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .feature{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.02)}
+    h2{margin:0 0 12px}
+    p{color:var(--muted);line-height:1.6}
+    .steps{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .step{display:flex;gap:12px;align-items:flex-start}
+    .num{min-width:44px;height:44px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:800}
+
+    /* TESTIMONIALS & FAQ */
+    blockquote{margin:0;padding:14px;border-left:4px solid rgba(199,154,46,0.16);color:var(--muted);background:linear-gradient(180deg, rgba(199,154,46,0.02), transparent);border-radius:8px}
+
+    details summary{cursor:pointer;padding:12px;border-radius:10px;background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.02)}
+    details p{padding:12px;color:var(--muted);margin:0}
+
+    footer{max-width:1200px;margin:36px auto;padding:18px 20px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+
+    /* WhatsApp floater */
+    .whatsapp{position:fixed;right:18px;bottom:18px;background:linear-gradient(90deg,#25d366,#1ab04a);color:#05292b;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(7,17,34,0.5);cursor:pointer}
+
+    /* responsive */
+    @media(max-width:980px){.hero{grid-template-columns:1fr;}.grid-3{grid-template-columns:1fr}.nav nav{display:none}}
+    @media(max-width:520px){.logo{width:44px;height:44px;font-size:16px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="logo">CR</div>
+        <div class="meta">
+          <div class="title">CredResgate</div>
+          <div class="tag">Recuperamos o que é seu — sem custo inicial</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#como">Como funciona</a>
+        <a href="#vantagens">Vantagens</a>
+        <a href="#etapas">Etapas</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <div class="actions">
+        <button class="btn ghost" onclick="openWhatsapp()">Fale conosco</button>
+        <button class="btn" onclick="document.getElementById('form-principal').scrollIntoView({behavior:'smooth'})">Enviar caso</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="panel">
+      <h1 style="color:var(--gold)">Recupere seu dinheiro com confiança e eficácia</h1>
+      <p class="lead">CredResgate é especializado em recuperar valores não pagos de serviços e vendas informais. Sem custo inicial — você só paga quando receber o que é seu.</p>
+
+      <div class="kpis">
+        <div class="kpi"><strong>Sem custo</strong><span class="small">Início gratuito</span></div>
+        <div class="kpi"><strong>Assessoria</strong><span class="small">Análise rápida</span></div>
+        <div class="kpi"><strong>Transparência</strong><span class="small">Contrato claro</span></div>
+      </div>
+
+      <div style="margin-top:20px;display:flex;gap:12px">
+        <button class="btn" onclick="document.getElementById('form-principal').scrollIntoView({behavior:'smooth'})">Quero recuperar meu valor</button>
+        <button class="btn ghost" onclick="openWhatsapp()">Falar no WhatsApp</button>
+      </div>
+
+      <div style="margin-top:22px;display:flex;gap:12px;align-items:center">
+        <div style="width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--gold),#a67e20);display:flex;align-items:center;justify-content:center;font-weight:800">✓</div>
+        <div>
+          <div style="font-weight:700">Resultados com respeito</div>
+          <div class="small">Atuação ética, dentro da lei e com foco em recuperar seu patrimônio.</div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="panel card-form">
+      <h3 style="margin-top:0">Avalie seu caso</h3>
+      <p class="small">Sem custos iniciais — envie seus dados e faremos uma análise inicial.</p>
+      <form id="form-principal" onsubmit="submitForm(event)">
+        <label class="small">Seu nome</label>
+        <input type="text" id="nome" placeholder="Seu nome" required />
+        <label class="small">Telefone (WhatsApp)</label>
+        <input type="tel" id="telefone" placeholder="(00) 0 0000-0000" required />
+        <label class="small">Nome do devedor / empresa</label>
+        <input type="text" id="nome-devedor" placeholder="Nome do devedor" />
+        <label class="small">Valor aproximado (R$)</label>
+        <input type="text" id="valor" placeholder="Ex: 1500" />
+        <label class="small">Descrição breve</label>
+        <textarea id="detalhes" rows="3" placeholder="Descreva o caso"></textarea>
+        <button class="btn" type="submit" style="width:100%">Enviar avaliação</button>
+      </form>
+      <p class="small" style="margin-top:8px">Ao enviar, nossa equipe fará contato para orientar os próximos passos.</p>
+    </aside>
+  </section>
+
+  <main>
+    <section id="como" class="panel" style="margin-bottom:18px">
+      <h2>Como o serviço funciona</h2>
+      <p>Nós analisamos seu caso e atuamos em duas frentes: <strong>Cobrança Amigável</strong> (negociação inicial) e <strong>Cobrança Intensificada</strong> (abordagem mais estruturada) — sempre dentro dos limites legais.</p>
+    </section>
+
+    <section id="vantagens" class="panel" style="margin-top:18px">
+      <h2>Vantagens de usar o CredResgate</h2>
+      <div class="grid-3" style="margin-top:12px">
+        <div class="feature"><h3>Sem custo inicial</h3><p>Você só paga se recebermos o valor devido.</p></div>
+        <div class="feature"><h3>Transparência</h3><p>Contrato claro e acompanhamento detalhado.</p></div>
+        <div class="feature"><h3>Atuação ética</h3><p>Não usamos práticas ilegais; protegemos sua reputação.</p></div>
+      </div>
+    </section>
+
+    <section id="etapas" class="panel" style="margin-top:18px">
+      <h2>Etapas da cobrança</h2>
+      <div class="steps" style="margin-top:12px">
+        <div class="step"><div class="num">1</div><div><strong>Cobrança Amigável</strong><p class="small">Contato, proposta de acordo e conciliação.</p></div></div>
+        <div class="step"><div class="num">2</div><div><strong>Cobrança Intensificada</strong><p class="small">Estratégias estruturadas, registros e pressão dentro da lei.</p></div></div>
+      </div>
+    </section>
+
+    <section class="panel" style="margin-top:18px">
+      <h2>Modelo de ganho</h2>
+      <p>Não há taxa inicial. Após recuperação do montante (com correções quando aplicáveis), retemos uma <strong>porcentagem</strong> combinada previamente e repassamos o restante ao cliente. Podemos apresentar faixas percentuais padrão conforme complexidade do caso.</p>
+    </section>
+
+    <section class="panel testimonials" style="margin-top:18px">
+      <h2>Depoimentos</h2>
+      <blockquote>"Recuperei R$2.400 que achava perdidos. Atendimento rápido e transparente." — Juliana, vendedora ambulante</blockquote>
+      <blockquote style="margin-top:12px">"Sem custo inicial e resultado efetivo. Recomendo." — Marcos, eletricista</blockquote>
+    </section>
+
+    <section class="panel" style="margin-top:18px">
+      <h2>Perguntas frequentes</h2>
+      <details style="margin-top:8px"><summary><strong>Quanto custa para iniciar?</strong></summary><p>Não cobramos nada antes de recuperar o valor.</p></details>
+      <details style="margin-top:8px"><summary><strong>Quanto vocês retêm?</strong></summary><p>A porcentagem é definida em contrato e varia por caso.</p></details>
+      <details style="margin-top:8px"><summary><strong>Vocês fazem cobranças ilegais?</strong></summary><p>Não. Atuamos sempre dentro da legislação vigente.</p></details>
+    </section>
+
+    <section id="contato" class="panel" style="margin-top:18px">
+      <h2>Contato</h2>
+      <form onsubmit="submitFullForm(event)">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <input type="text" id="nome-full" placeholder="Seu nome" required />
+          <input type="tel" id="telefone-full" placeholder="Telefone (WhatsApp)" required />
+        </div>
+        <input type="email" id="email-full" placeholder="E-mail (opcional)" />
+        <input type="text" id="devedor-full" placeholder="Nome do devedor / empresa" />
+        <input type="text" id="valor-full" placeholder="Valor estimado (R$)" />
+        <textarea id="descricao-full" rows="4" placeholder="Descreva o caso com detalhes" required></textarea>
+        <button class="btn" type="submit" style="margin-top:12px">Enviar caso</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <strong>CredResgate</strong>
+      <div class="small">Recuperação de créditos informais • Sem custo inicial</div>
+    </div>
+    <div class="small">contato@credresgate.com • (00) 0 0000-0000</div>
+  </footer>
+
+  <div class="whatsapp" onclick="openWhatsapp()" title="Falar no WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.52 3.48A11.86 11.86 0 0012 0C5.37 0 .02 5.35.02 12c0 2.11.55 4.18 1.6 6.01L0 24l6.2-1.62A11.9 11.9 0 0012 24c6.63 0 12-5.35 12-12 0-3.18-1.24-6.15-3.48-8.52z" fill="#fff"/></svg>
+  </div>
+
+  <script>
+    function openWhatsapp(){
+      const phone = '5511999999999'; // coloque seu número com DDI e DDD
+      const text = encodeURIComponent('Olá, quero avaliação de caso - CredResgate');
+      window.open(`https://wa.me/${phone}?text=${text}`,'_blank')
+    }
+
+    function submitForm(e){
+      e.preventDefault();
+      const nome = document.getElementById('nome').value;
+      alert('Obrigado, '+nome+". Recebemos sua avaliação. Vamos analisar e retornar por WhatsApp.");
+      e.target.reset();
+    }
+
+    function submitFullForm(e){
+      e.preventDefault();
+      const nome = document.getElementById('nome-full').value;
+      alert('Recebido, '+nome+". A equipe CredResgate entrará em contato para análise inicial.");
+      e.target.reset();
+    }
+  </script>
+
+  <!--
+    Abaixo há esboços de páginas adicionais para o site completo. Se preferir, eu crio arquivos separados (about.html, services.html, contact.html, privacy.html).
+
+    ==== about.html (modelo) ==== 
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head><meta charset="utf-8"><title>Sobre — CredResgate</title></head>
+    <body>
+      <h1>Sobre o CredResgate</h1>
+      <p>Texto institucional falando do time, missão e valores.</p>
+      <a href="index.html">Voltar</a>
+    </body>
+    </html>
+
+    ==== services.html (modelo) ==== 
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head><meta charset="utf-8"><title>Serviços — CredResgate</title></head>
+    <body>
+      <h1>Serviços</h1>
+      <ul>
+        <li>Cobrança Amigável</li>
+        <li>Cobrança Intensificada</li>
+        <li>Assessoria e orientação jurídica</li>
+      </ul>
+      <a href="index.html">Voltar</a>
+    </body>
+    </html>
+
+    ==== contact.html (modelo) ==== 
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head><meta charset="utf-8"><title>Contato — CredResgate</title></head>
+    <body>
+      <h1>Contato</h1>
+      <p>E-mail: contato@credresgate.com</p>
+      <p>WhatsApp: (00) 0 0000-0000</p>
+      <a href="index.html">Voltar</a>
+    </body>
+    </html>
+  -->
+</body>
+</html>
